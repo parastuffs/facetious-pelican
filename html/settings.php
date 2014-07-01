@@ -1,6 +1,6 @@
 <?php
 
-$db_name = "facetious_pelican_bis";
+$db_name = "facetious-pelican";
 $db_host = "localhost";
-$db_user = "";
-$db_passwd = "";
+$db_user = "root";
+$db_passwd = "G0ldorak!";
