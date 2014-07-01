@@ -1,7 +1,7 @@
 <?php
 
-include($_SERVER["DOCUMENT_ROOT"]."/settings.php");
-include($_SERVER["DOCUMENT_ROOT"]."/connectDB.php");
+//include_once($_SERVER["DOCUMENT_ROOT"]."/settings.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/connectDB.php");
 
 $createStr = 'CREATE TABLE user
 	(id INT NOT NULL AUTO_INCREMENT,
@@ -9,9 +9,11 @@ $createStr = 'CREATE TABLE user
 	password CHAR(64) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	PRIMARY KEY(id)
-)';
+) ';
 
-$createStr += 'CREATE TABLE books
+$answer = $db->query($createStr);
+
+$createStr = 'CREATE TABLE books
 	(id INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(255) NOT NULL,
 	author VARCHAR(255) NOT NULL,
@@ -22,11 +24,15 @@ $createStr += 'CREATE TABLE books
 	isbn10 CHAR(10) NOT NULL UNIQUE,
 	cover VARCHAR(255),
 	PRIMARY KEY(id)
-)';
+) ';
 
-$createStr += 'CREATE TABLE book_user
+$answer = $db->query($createStr);
+
+$createStr = 'CREATE TABLE book_user
 	(user_id INT NOT NULL,
 	book_id INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE ON UPDATE CASCADE
-)';
+) ';
+
+$answer = $db->query($createStr);
