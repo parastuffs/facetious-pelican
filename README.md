@@ -7,3 +7,9 @@ Where did you get it?"
 The pelican answers "Well, it started out as a wart on my ass."
 
 Requires curl installed.
+
+TO DO
+------
+* Check password in register form
+* Go home button
+* Logout feature
