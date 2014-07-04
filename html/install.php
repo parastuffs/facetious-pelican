@@ -3,7 +3,7 @@
 //include_once($_SERVER["DOCUMENT_ROOT"]."/settings.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/connectDB.php");
 
-$createStr = 'CREATE TABLE user
+$createStr = 'CREATE TABLE users
 	(id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
 	password CHAR(64) NOT NULL,
@@ -31,7 +31,7 @@ $answer = $db->query($createStr);
 $createStr = 'CREATE TABLE book_user
 	(user_id INT NOT NULL,
 	book_id INT NOT NULL,
-	FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ';
 
