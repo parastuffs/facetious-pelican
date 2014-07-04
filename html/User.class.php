@@ -6,42 +6,38 @@ class User
 	private $_id;
 	private $_name;
 	private $_email;
+	private $_level;
 	
-	public __construct($email)
+	public function __construct($email, $name, $id)
 	{
-		//Fetch user with $mail in db.
+		$this->_id = $id;
+		$this->_name = $name;
+		$this->_email = $email;
 	}
 	
-	public __construct($email, $name, $id)
-	{
-		this->$_id = $id;
-		this->$_name = $name;
-		this->$_email = $email;
-	}
-	
-	public addBook(Book $book)
+	public function addBook(Book $book)
 	{
 		//Add relation in db.
 	}
 	
-	public getEmail()
+	public function getEmail()
 	{
-		return this->$_email;
+		return $this->_email;
 	}
 	
-	public setEmail($email)
+	public function setEmail($email)
 	{
-		this->$_email = $email;
+		$this->_email = $email;
 	}
 	
-	public getName()
+	public function getName()
 	{
-		return this->name;
+		return $this->_name;
 	}
 	
-	public setName($name)
+	public function setName($name)
 	{
-		this->$_name = $name;
+		$this->_name = $name;
 	}
 
 }
