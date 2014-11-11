@@ -1,4 +1,6 @@
 <?php
+require 'User.class.php';
+session_start();
 echo '
 <html>
 <head>
@@ -12,7 +14,11 @@ echo '
 		<div id="body">
 ';
 
+if(isset($_SESSION['loggedin'])) {
+	echo 'Logged in. Hello '.$_SESSION['user']->getName().'<br />';
+}
 include($_SERVER["DOCUMENT_ROOT"]."/module_login.php");
+
 
 echo '
 		</div>
