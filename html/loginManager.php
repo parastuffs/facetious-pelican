@@ -23,8 +23,8 @@ else if(isset($_POST['login'])) {
 
 	$query = $db->prepare('SELECT name, id FROM users WHERE email=:email AND password=:password');
 	$query->execute(array(
-		email => $email,
-		password => $hashed
+		'email' => $email,
+		'password' => $hashed
 		));
 	$data = $query->fetch();
 
