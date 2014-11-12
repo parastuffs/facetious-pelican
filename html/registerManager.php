@@ -9,3 +9,4 @@ $query->execute(array(
 	));
 
 echo 'after';
+echo '<meta http-equiv="refresh" content="2;url=',$_SERVER['HTTP_REFERER'],'" />';
