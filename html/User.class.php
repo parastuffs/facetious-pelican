@@ -1,11 +1,11 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"]."/connectDB.php");
 
 class User
 {
 	private $_id;
 	private $_name;
 	private $_email;
+	private $_level;
 	
 	public function __construct($email, $name, $id)
 	{
@@ -13,7 +13,7 @@ class User
 		$this->_name = $name;
 		$this->_email = $email;
 	}
-	
+
 	//public function addBook(Book $book)
 	//{
 		////Add relation in db.

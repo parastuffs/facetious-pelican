@@ -14,9 +14,6 @@ echo '
 		<div id="body">
 ';
 
-if(isset($_SESSION['loggedin'])) {
-	echo 'Logged in. Hello '.$_SESSION['user']->getName().'<br />';
-}
 include($_SERVER["DOCUMENT_ROOT"]."/module_login.php");
 
 
