@@ -10,23 +10,23 @@ Requires curl installed.
 
 TO DO
 ------
-*[ ] Check password in register form
+- [ ] Check password in register form
 
-*[ ] Go home button
+- [ ] Go home button
 
-*[x] Logout feature
+- [x] Logout feature
 
-*[ ] User home page: list all his books
+- [ ] User home page: list all his books
 
-*[ ] Make use of the Book class
+- [ ] Make use of the Book class
 
-*[ ] Add a book in the database
+- [ ] Add a book in the database
 
-*[ ] Upon user login, load his books (main info, at least) in his class
+- [ ] Upon user login, load his books (main info, at least) in his class
 
-*[ ] Dynamic proposition for the author field.
+- [ ] Dynamic proposition for the author field.
 
-*[ ] Feature: group authors, make some of them similar so that they are
+- [ ] Feature: group authors, make some of them similar so that they are
 considered the same under search. Ex: if 'Simmons' and 'Dan Simmons' are
 grouped, looking for 'Simmons' will show the results for 'Dan Simmons'
 as well. Add an option for grouped or exact search.
