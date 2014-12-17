@@ -11,6 +11,11 @@ echo '
 <body>
 	<div id="wrapper">
 		<div id="header"></div>
+';
+
+include($_SERVER["DOCUMENT_ROOT"]."/mainMenu.php");
+
+echo '
 		<div id="body">
 ';
 
