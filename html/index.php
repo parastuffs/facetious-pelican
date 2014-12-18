@@ -1,5 +1,6 @@
 <?php
 require 'User.class.php';
+require 'Book.class.php';
 session_start();
 echo '
 <html>
@@ -20,6 +21,12 @@ echo '
 ';
 
 include($_SERVER["DOCUMENT_ROOT"]."/module_login.php");
+
+echo '
+			<div id="book_list">
+';
+
+include($_SERVER["DOCUMENT_ROOT"]."/module_book_list.php");
 
 
 echo '

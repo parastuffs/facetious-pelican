@@ -68,4 +68,4 @@ else {
 // TODO Put this book in a, object
 // TODO fetch the book back and update the object's id
 // TODO INSERT into book_user
-//echo '<meta http-equiv="refresh" content="2;url=',$_SERVER['HTTP_REFERER'],'" />';
+echo '<meta http-equiv="refresh" content="2;url=',$_SERVER['HTTP_REFERER'],'" />';
