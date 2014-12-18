@@ -18,9 +18,9 @@ TO DO
 
 - [ ] User home page: list all his books
 
-- [ ] Make use of the Book class
+- [x] Make use of the Book class
 
-- [ ] Add a book in the database
+- [x] Add a book in the database
 
 - [ ] Upon user login, load his books (main info, at least) in his class
 
