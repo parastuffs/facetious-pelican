@@ -36,3 +36,7 @@ grouped, looking for 'Simmons' will show the results for 'Dan Simmons'
 as well. Add an option for grouped or exact search.
 
 - [ ] Feature: Wish list
+
+- [ ] Manage books page
+
+- [ ] Edit book info page
