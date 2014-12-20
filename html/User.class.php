@@ -49,16 +49,16 @@ class User
 
 	public function addBook($book)
 	{
-		echo '<br />books init size: '.count($this->_books).'<br />';
-		echo 'Book title to add in user: \''.$book->getTitle().'\'<br />';
+		// echo '<br />books init size: '.count($this->_books).'<br />';
+		// echo 'Book title to add in user: \''.$book->getTitle().'\'<br />';
 		if(0 == count($this->_books)) {
 			$this->_books[] = $book;
 		}
 		else {
 			array_push($this->_books, $book);
 		}
-		echo '<br />books new isze: '.count($this->_books).'<br />';
-		print_r($this->_books);
+		// echo '<br />books new isze: '.count($this->_books).'<br />';
+		// print_r($this->_books);
 	}
 
 	public function getBooks()

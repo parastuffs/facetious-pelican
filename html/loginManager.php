@@ -3,9 +3,7 @@ session_start();
 
 include_once($_SERVER["DOCUMENT_ROOT"]."/connectDB.php");
 function loadClass($className) {
-	echo 'Loading class \''.$className.'\'.';
 	require $_SERVER["DOCUMENT_ROOT"]."/".$className.'.class.php';
-	echo 'Class loaded.';
 }
 
 spl_autoload_register('loadClass');
@@ -30,8 +28,30 @@ else if(isset($_POST['login'])) {
 
 	if(isset($data['id'])) {
 		//Login successful
-		$_SESSION['user'] = new User($email, $data['name'], $data['id']);
+		$user_id = $data['id'];
+		$_SESSION['user'] = new User($email, $data['name'], $user_id);
 		echo '<meta http-equiv="refresh" content="2;url=',$_SERVER['HTTP_REFERER'],'" />';
+
+		// ----------
+		// Load user's books
+		// ----------
+		$query = $db->prepare('SELECT b.id, b.title, b.author, b.year, b.pages, b.publisher, b.isbn13, b.isbn10, b.cover
+								 FROM books b, users u, book_user bu 
+								 WHERE u.id=:user_id and bu.user_id=u.id and bu.book_id=b.id');
+		$query->execute(array(
+			'user_id' => $user_id
+			));
+
+		// Create objects
+		while($data = $query->fetch()) {
+			$book = new Book($data['id'], $data['title'], $data['author'], $data['isbn10'], $data['isbn13']);
+			$book->setYear($data['year']);
+			$book->setPublisher($data['publisher']);
+			$book->setCover($data['cover']);
+			$book->setPages($data['pages']);
+
+			$_SESSION['user']->addBook($book);
+		}
 	}
 	else {
 		echo 'fail';
