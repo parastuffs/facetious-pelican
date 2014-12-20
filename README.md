@@ -14,6 +14,10 @@ TO DO
 
 - [ ] Go home button
 
+- [x] Sort books when displaying them.
+
+- [ ] Allow the user to dynamically sort his list.
+
 - [x] Logout feature
 
 - [x] User home page: list all his books

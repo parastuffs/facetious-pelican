@@ -37,7 +37,8 @@ else if(isset($_POST['login'])) {
 		// ----------
 		$query = $db->prepare('SELECT b.id, b.title, b.author, b.year, b.pages, b.publisher, b.isbn13, b.isbn10, b.cover
 								 FROM books b, users u, book_user bu 
-								 WHERE u.id=:user_id and bu.user_id=u.id and bu.book_id=b.id');
+								 WHERE u.id=:user_id and bu.user_id=u.id and bu.book_id=b.id
+								 ORDER BY b.author ASC');
 		$query->execute(array(
 			'user_id' => $user_id
 			));
