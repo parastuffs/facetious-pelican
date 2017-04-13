@@ -12,7 +12,7 @@ TO DO
 ------
 - [ ] Check password in register form
 
-- [ ] Go home button
+- [x] Go home button
 
 - [x] Sort books when displaying them.
 
