@@ -40,3 +40,12 @@ as well. Add an option for grouped or exact search.
 - [ ] Manage books page
 
 - [ ] Edit book info page
+
+- [ ] Compute statistics of the user, such as the proportion of sci-fi books in his collection or the total amount of pages.
+
+- Fields to add to books:
+	- [ ] subtitle saga
+	- [ ] genre
+	- [ ] Traductor
+	- [ ] Publisher
+	- [ ] pages
