@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>One Facetious Pelican</title>
+</head>
+
+<p>JSON using javascript.</p>
+
+<p id="test"></p>
+
+<form method="post" action="addBook_Manager.php">
+	<p>
+		<label for="title">Title</label>: 
+		<input type="text" name="title" id="title" required /><br />
+		
+		<label for="author">Author</label>: 
+		<input type="text" name="author" id="author" required /><br />
+		
+		<label for="isbn10">ISBN 10</label>: 
+		<input type="text" name="isbn10" id="isbn10" required /><br />
+		
+		<label for="isbn13">ISBN 13</label>: 
+		<input type="text" name="isbn13" id="isbn13" required /><br />
+		
+		<input type="submit" value="Register" />
+	</p>
+</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+<!-- You can't use a script tag to load a script *and* put code in it at the same time.
+You need one tag pair to load the script and an other one to write your code. -->
+
+<script type="text/javascript">
+//TODO: What happens if there is no match in the isbn database?
+	$.getJSON("nemesis.json", function(data) {
+	// console.log("data: " + data.index_searched);// Console is accessed via the developper's tools.
+	// document.getElementById("test").innerHTML = "data: " + data.data[0].title_latin;
+	document.getElementById("title").value = data.data[0].title_latin;
+	document.getElementById("author").value = data.data[0].author_data[0].name;
+	// TODO: rewrite the author name as Forename Name instead of Name, Surname.
+	var pattern = new RegExp(/[A-Z]\w*/);// The pattern stops at the first non-alpha character.
+	var res = pattern.exec(data.data[0].author_data[0].name);
+	document.getElementById("test").innerHTML = res;
+
+	document.getElementById("isbn10").value = data.data[0].isbn10;
+	document.getElementById("isbn13").value = data.data[0].isbn13;
+});
+
+
+</script>
+
+</html>
